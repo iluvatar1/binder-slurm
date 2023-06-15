@@ -55,7 +55,7 @@ ls /etc/slurm
 ln -s /etc/slurm/slurm.conf /etc/slurm.conf
 chmod 755 /etc/slurm/
 
-slurmd -C
+slurmd -C | head -n 1
 #slurmd -C | head -n 1 >> /etc/slurm/slurm.conf
 sed -E 's/^(NodeName=)[^ ]+/\1localhost/' <<< "$(slurmd -C | head -n 1)" >> /etc/slurm/slurm.conf
 

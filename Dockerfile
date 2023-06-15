@@ -22,7 +22,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Running slurm setup script as root
-RUN echo localhost > /etc/hostname
+#RUN echo localhost > /etc/hostname
 COPY slurm_setup.sh .
 RUN bash slurm_setup.sh
 
